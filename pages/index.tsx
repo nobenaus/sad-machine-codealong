@@ -2,8 +2,6 @@ import { css } from '@emotion/react';
 import { useEffect, useState } from 'react';
 import { WeatherApiResponse } from './api/weather';
 
-const unusedVariable = 123;
-
 const containerStyles = css`
   background-color: #eee;
   min-height: 100vh;
@@ -76,14 +74,13 @@ type AppError = {
 };
 
 export default function Home() {
-  const initialState: number = 'Vienna';
+  const initialState: string = 'Vienna';
   const [queryDraft, setQueryDraft] = useState(initialState);
   const [query, setQuery] = useState(initialState);
   const [error, setError] = useState<AppError>();
 
   const [weatherData, setWeatherData] = useState<WeatherApiResponse>();
 
-  undefinedFunction();
 
   useEffect(() => {
     async function retrieveWeatherData() {
