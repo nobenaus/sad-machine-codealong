@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`transforms a 401 response correctly 1`] = `
+Object {
+  "error": Object {
+    "code": 401,
+    "message": "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info.",
+  },
+}
+`;
+
+exports[`transforms a 404 response correctly 1`] = `
+Object {
+  "error": Object {
+    "code": 404,
+    "message": "city not found",
+  },
+}
+`;

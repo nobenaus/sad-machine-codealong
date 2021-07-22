@@ -1,0 +1,29 @@
+name: Cypress tests
+on: [push]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Use Cypress GitHub action to run tests
+      # https://github.com/cypress-io/github-action
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          start: yarn dev
+        env:
+          OPENWEATHERMAP_API_KEY: ${{ secrets.    OPENWEATHERMAP_API_KEY }}
+      # Store any Cypress screenshots on test     failure
+      - uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+      # Store any Cypress videos on test failure
+      - uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: cypress-videos
+          path: cypress/vide
