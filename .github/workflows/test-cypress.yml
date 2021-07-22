@@ -14,7 +14,7 @@ jobs:
         with:
           start: yarn dev
         env:
-          OPENWEATHERMAP_API_KEY: ${{ secrets.    OPENWEATHERMAP_API_KEY }}
+          OPENWEATHERMAP_API_KEY: ${{ secrets.OPENWEATHERMAP_API_KEY }}
       # Store any Cypress screenshots on test     failure
       - uses: actions/upload-artifact@v2
         if: failure()
